@@ -4,6 +4,8 @@
  */
 package School_Batting;
 
+import Modern.Windows;
+
 /**
  *
  * @author Jcj
@@ -29,84 +31,112 @@ public class StartScreen extends javax.swing.JFrame
     private void initComponents()
     {
 
-        headerPanel = new javax.swing.JPanel();
-        exit_Button1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         login_Panel = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        emailField = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        headerPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(1920, 1080));
+        setForeground(java.awt.Color.white);
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1920, 1000));
+        setResizable(false);
+        setSize(getPreferredSize());
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        headerPanel.setBackground(new java.awt.Color(255, 255, 255));
-        headerPanel.setName(""); // NOI18N
-        headerPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        login_Panel.setBackground(new java.awt.Color(255, 255, 255));
+        login_Panel.setBorder(new javax.swing.border.LineBorder(jButton2.getBackground(), 1, true));
+        login_Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        exit_Button1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        exit_Button1.setText("X");
-        exit_Button1.setBorderPainted(false);
-        exit_Button1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        exit_Button1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        exit_Button1.setIconTextGap(0);
-        exit_Button1.setOpaque(true);
-        exit_Button1.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                exit_Button1MouseClicked(evt);
-            }
-        });
-        exit_Button1.addActionListener(new java.awt.event.ActionListener()
+        jLabel2.setBackground(login_Panel.getBackground());
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reddamHouseLogo.png"))); // NOI18N
+        login_Panel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Sign In");
+        login_Panel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 190, 40));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("with your Reddam Account");
+        login_Panel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 230, 20));
+
+        emailField.setBackground(login_Panel.getBackground());
+        emailField.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(jButton2.getBackground(), 2, true), "Email Address", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), jButton2.getBackground())); // NOI18N
+        emailField.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                exit_Button1ActionPerformed(evt);
+                emailFieldActionPerformed(evt);
             }
         });
-        headerPanel.add(exit_Button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1890, 10, -1, -1));
+        login_Panel.add(emailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 430, 60));
+
+        jButton2.setBackground(new java.awt.Color(25, 115, 230));
+        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Sign In");
+        jButton2.setBorderPainted(false);
+        login_Panel.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 520, -1, -1));
+
+        jButton3.setBackground(login_Panel.getBackground());
+        jButton3.setFont(new java.awt.Font("Segoe UI Semilight", 0, 12)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(25, 115, 230));
+        jButton3.setText("Create an account");
+        jButton3.setBorderPainted(false);
+        login_Panel.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 520, -1, -1));
+
+        getContentPane().add(login_Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 260, 620, 570));
+
+        headerPanel.setBackground(new java.awt.Color(255, 255, 255));
+        headerPanel.setMaximumSize(new java.awt.Dimension(1042, 129));
+        headerPanel.setName(""); // NOI18N
+        headerPanel.setPreferredSize(new java.awt.Dimension(1600, 129));
+        headerPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(headerPanel.getBackground());
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
-        headerPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 6, 462, 129));
+        headerPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, 462, 129));
 
-        getContentPane().add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, -1));
-
-        login_Panel.setBackground(new java.awt.Color(255, 255, 255));
-        login_Panel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(44, 111, 198)));
-        login_Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTextField1.setBackground(login_Panel.getBackground());
-        jTextField1.addActionListener(new java.awt.event.ActionListener()
+        jButton1.setBackground(headerPanel.getBackground());
+        jButton1.setText("X");
+        jButton1.setBorder(null);
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter()
         {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
+            public void mouseClicked(java.awt.event.MouseEvent evt)
             {
-                jTextField1ActionPerformed(evt);
+                jButton1MouseClicked(evt);
             }
         });
-        login_Panel.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 229, 430, 76));
+        headerPanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1570, 10, -1, -1));
 
-        getContentPane().add(login_Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 300, 720, 720));
+        getContentPane().add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void exit_Button1MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_exit_Button1MouseClicked
-    {//GEN-HEADEREND:event_exit_Button1MouseClicked
+    private void emailFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_emailFieldActionPerformed
+    {//GEN-HEADEREND:event_emailFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_exit_Button1MouseClicked
+    }//GEN-LAST:event_emailFieldActionPerformed
 
-    private void exit_Button1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_exit_Button1ActionPerformed
-    {//GEN-HEADEREND:event_exit_Button1ActionPerformed
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jButton1MouseClicked
+    {//GEN-HEADEREND:event_jButton1MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_exit_Button1ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jTextField1ActionPerformed
-    {//GEN-HEADEREND:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+        dispose();
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -118,28 +148,12 @@ public class StartScreen extends javax.swing.JFrame
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try
+         try
         {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
-            {
-                if ("Nimbus".equals(info.getName()))
-                {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex)
+             javax.swing.UIManager.setLookAndFeel("com.formdev.flatlaf.FlatDarkLaf");
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex)
         {
-            java.util.logging.Logger.getLogger(StartScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex)
-        {
-            java.util.logging.Logger.getLogger(StartScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex)
-        {
-            java.util.logging.Logger.getLogger(StartScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex)
-        {
-            java.util.logging.Logger.getLogger(StartScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Windows.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -154,10 +168,15 @@ public class StartScreen extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton exit_Button1;
+    private javax.swing.JTextField emailField;
     private javax.swing.JPanel headerPanel;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel login_Panel;
     // End of variables declaration//GEN-END:variables
 }
