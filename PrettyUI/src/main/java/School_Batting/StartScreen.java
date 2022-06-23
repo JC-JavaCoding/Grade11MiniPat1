@@ -38,9 +38,10 @@ public class StartScreen extends javax.swing.JFrame
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        emailField = new javax.swing.JTextField();
         signinButton = new javax.swing.JButton();
         createAccountButton = new javax.swing.JButton();
+        emailField = new javax.swing.JTextField();
+        jPasswordField1 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -96,19 +97,6 @@ public class StartScreen extends javax.swing.JFrame
         jLabel4.setText("with your Reddam Account");
         login_Panel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 230, 20));
 
-        emailField.setBackground(login_Panel.getBackground());
-        emailField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        emailField.setForeground(new java.awt.Color(0, 0, 0));
-        emailField.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(signinButton.getBackground(), 2, true), "Email Address", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), signinButton.getBackground())); // NOI18N
-        emailField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                emailFieldActionPerformed(evt);
-            }
-        });
-        login_Panel.add(emailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 430, 60));
-
         signinButton.setBackground(new java.awt.Color(25, 115, 230));
         signinButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         signinButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -130,15 +118,27 @@ public class StartScreen extends javax.swing.JFrame
         createAccountButton.setBorderPainted(false);
         login_Panel.add(createAccountButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 520, -1, -1));
 
+        emailField.setBackground(login_Panel.getBackground());
+        emailField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        emailField.setForeground(new java.awt.Color(0, 0, 0));
+        emailField.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(25, 115, 230), 2, true), "Email Address", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(25, 115, 230))); // NOI18N
+        emailField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                emailFieldActionPerformed(evt);
+            }
+        });
+        login_Panel.add(emailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 430, 60));
+
+        jPasswordField1.setBackground(login_Panel.getBackground());
+        jPasswordField1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(25, 115, 230), 2, true), "Password", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(25, 115, 230))); // NOI18N
+        login_Panel.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, 430, 60));
+
         getContentPane().add(login_Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 260, 620, 570));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void emailFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_emailFieldActionPerformed
-    {//GEN-HEADEREND:event_emailFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emailFieldActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jButton1MouseClicked
     {//GEN-HEADEREND:event_jButton1MouseClicked
@@ -153,6 +153,11 @@ public class StartScreen extends javax.swing.JFrame
         
         //then call next screen
     }//GEN-LAST:event_signinButtonMouseClicked
+
+    private void emailFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_emailFieldActionPerformed
+    {//GEN-HEADEREND:event_emailFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,6 +197,7 @@ public class StartScreen extends javax.swing.JFrame
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPanel login_Panel;
     private javax.swing.JButton signinButton;
     // End of variables declaration//GEN-END:variables
