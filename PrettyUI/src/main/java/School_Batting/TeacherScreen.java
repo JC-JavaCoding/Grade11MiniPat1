@@ -143,7 +143,21 @@ public class TeacherScreen extends javax.swing.JFrame
         jLabel1 = new javax.swing.JLabel();
         jTabbedPane = new javax.swing.JTabbedPane();
         ManageTeachers_Panel = new javax.swing.JPanel();
+        manageT_HeaderPanel = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
         findBatter_Panel = new javax.swing.JPanel();
+        findBatter_HeaderPanel = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -216,18 +230,165 @@ public class TeacherScreen extends javax.swing.JFrame
         jTabbedPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
 
         ManageTeachers_Panel.setBackground(new java.awt.Color(255, 255, 255));
-        ManageTeachers_Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        manageT_HeaderPanel.setBackground(new java.awt.Color(0, 0, 102));
+
+        jLabel2.setBackground(ManageTeachers_Panel.getBackground());
+        jLabel2.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("MANAGE TEACHERS");
+
+        javax.swing.GroupLayout manageT_HeaderPanelLayout = new javax.swing.GroupLayout(manageT_HeaderPanel);
+        manageT_HeaderPanel.setLayout(manageT_HeaderPanelLayout);
+        manageT_HeaderPanelLayout.setHorizontalGroup(
+            manageT_HeaderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(manageT_HeaderPanelLayout.createSequentialGroup()
+                .addGap(625, 625, 625)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        manageT_HeaderPanelLayout.setVerticalGroup(
+            manageT_HeaderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(manageT_HeaderPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][]
+            {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String []
+            {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jRadioButton1.setText("editable");
+
+        jLabel4.setText("jLabel4");
+
+        jLabel5.setText("jLabel5");
+
+        jLabel6.setText("jLabel6");
+
+        jComboBox1.setBackground(new java.awt.Color(153, 255, 255));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 255), 2, true), "Select teacher"));
+
+        jTextField2.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ManageTeachers_PanelLayout = new javax.swing.GroupLayout(ManageTeachers_Panel);
+        ManageTeachers_Panel.setLayout(ManageTeachers_PanelLayout);
+        ManageTeachers_PanelLayout.setHorizontalGroup(
+            ManageTeachers_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(manageT_HeaderPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(ManageTeachers_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ManageTeachers_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ManageTeachers_PanelLayout.createSequentialGroup()
+                        .addGap(0, 626, Short.MAX_VALUE)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(579, 579, 579)
+                        .addComponent(jRadioButton1)))
+                .addContainerGap())
+            .addGroup(ManageTeachers_PanelLayout.createSequentialGroup()
+                .addGap(140, 140, 140)
+                .addGroup(ManageTeachers_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(ManageTeachers_PanelLayout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ManageTeachers_PanelLayout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ManageTeachers_PanelLayout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(29, 29, 29)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        ManageTeachers_PanelLayout.setVerticalGroup(
+            ManageTeachers_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ManageTeachers_PanelLayout.createSequentialGroup()
+                .addGroup(ManageTeachers_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ManageTeachers_PanelLayout.createSequentialGroup()
+                        .addComponent(manageT_HeaderPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRadioButton1))
+                    .addGroup(ManageTeachers_PanelLayout.createSequentialGroup()
+                        .addGap(119, 119, 119)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(31, 31, 31)
+                .addGroup(ManageTeachers_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(ManageTeachers_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(ManageTeachers_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
         jTabbedPane.addTab("Manage Teachers", ManageTeachers_Panel);
+
+        findBatter_Panel.setBackground(new java.awt.Color(255, 255, 255));
+
+        findBatter_HeaderPanel.setBackground(new java.awt.Color(0, 0, 102));
+
+        jLabel3.setBackground(findBatter_HeaderPanel.getBackground());
+        jLabel3.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("FIND BATTING TEACHER");
+
+        javax.swing.GroupLayout findBatter_HeaderPanelLayout = new javax.swing.GroupLayout(findBatter_HeaderPanel);
+        findBatter_HeaderPanel.setLayout(findBatter_HeaderPanelLayout);
+        findBatter_HeaderPanelLayout.setHorizontalGroup(
+            findBatter_HeaderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(findBatter_HeaderPanelLayout.createSequentialGroup()
+                .addGap(623, 623, 623)
+                .addComponent(jLabel3)
+                .addContainerGap(631, Short.MAX_VALUE))
+        );
+        findBatter_HeaderPanelLayout.setVerticalGroup(
+            findBatter_HeaderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(findBatter_HeaderPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout findBatter_PanelLayout = new javax.swing.GroupLayout(findBatter_Panel);
         findBatter_Panel.setLayout(findBatter_PanelLayout);
         findBatter_PanelLayout.setHorizontalGroup(
             findBatter_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1402, Short.MAX_VALUE)
+            .addGroup(findBatter_PanelLayout.createSequentialGroup()
+                .addComponent(findBatter_HeaderPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
         findBatter_PanelLayout.setVerticalGroup(
             findBatter_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 604, Short.MAX_VALUE)
+            .addComponent(findBatter_HeaderPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         jTabbedPane.addTab("Find Batting Teacher", findBatter_Panel);
@@ -239,7 +400,7 @@ public class TeacherScreen extends javax.swing.JFrame
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTabbedPane)
-                    .addComponent(headerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1536, Short.MAX_VALUE))
+                    .addComponent(headerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
@@ -275,6 +436,11 @@ public class TeacherScreen extends javax.swing.JFrame
                 evt.getYOnScreen() - evt.getY()
         );
     }//GEN-LAST:event_formMouseDragged
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jTextField2ActionPerformed
+    {//GEN-HEADEREND:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -324,10 +490,24 @@ public class TeacherScreen extends javax.swing.JFrame
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ManageTeachers_Panel;
+    private javax.swing.JPanel findBatter_HeaderPanel;
     private javax.swing.JPanel findBatter_Panel;
     private javax.swing.JPanel headerPanel;
     private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JPanel manageT_HeaderPanel;
     // End of variables declaration//GEN-END:variables
 }

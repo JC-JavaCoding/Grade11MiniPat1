@@ -19,6 +19,7 @@ public class StartScreen extends javax.swing.JFrame
     public StartScreen()
     {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -55,6 +56,13 @@ public class StartScreen extends javax.swing.JFrame
         headerPanel.setMaximumSize(new java.awt.Dimension(1042, 129));
         headerPanel.setName(""); // NOI18N
         headerPanel.setPreferredSize(new java.awt.Dimension(1280, 130));
+        headerPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter()
+        {
+            public void mouseDragged(java.awt.event.MouseEvent evt)
+            {
+                headerPanelMouseDragged(evt);
+            }
+        });
 
         jLabel1.setBackground(headerPanel.getBackground());
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -251,6 +259,23 @@ public class StartScreen extends javax.swing.JFrame
     {//GEN-HEADEREND:event_jPanel1PropertyChange
         // TODO add your handling code here:
     }//GEN-LAST:event_jPanel1PropertyChange
+
+    private void headerPanelMouseDragged(java.awt.event.MouseEvent evt)//GEN-FIRST:event_headerPanelMouseDragged
+    {//GEN-HEADEREND:event_headerPanelMouseDragged
+        // TODO add your handling code here:
+        int x = evt.getX();
+        int y = evt.getY();
+        int xOnScreen = evt.getXOnScreen();
+        int yOnScreen = evt.getYOnScreen();
+        
+        System.out.println("position: "+ x +","+ y);
+        System.out.println("position on screen: "+ xOnScreen +","+ yOnScreen);
+        
+        int newX = xOnScreen + x;
+        int newY = yOnScreen + y;
+        System.out.println("new X: "+ newX +", newY: "+ newY);
+       setLocation(xOnScreen - newX, yOnScreen - newY);
+    }//GEN-LAST:event_headerPanelMouseDragged
 
     /**
      * @param args the command line arguments
