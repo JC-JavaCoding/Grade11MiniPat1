@@ -249,7 +249,7 @@ public class TeacherScreen extends javax.swing.JFrame
             .addGroup(manageT_HeaderPanelLayout.createSequentialGroup()
                 .addGap(625, 625, 625)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(629, Short.MAX_VALUE))
+                .addContainerGap(641, Short.MAX_VALUE))
         );
         manageT_HeaderPanelLayout.setVerticalGroup(
             manageT_HeaderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,6 +272,13 @@ public class TeacherScreen extends javax.swing.JFrame
         jScrollPane1.setViewportView(timetableTable);
 
         editableButton.setText("editable");
+        editableButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                editableButtonActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Batting Wight:");
 
@@ -325,7 +332,6 @@ public class TeacherScreen extends javax.swing.JFrame
         ManageTeachers_PanelLayout.setHorizontalGroup(
             ManageTeachers_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ManageTeachers_PanelLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(ManageTeachers_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ManageTeachers_PanelLayout.createSequentialGroup()
                         .addGroup(ManageTeachers_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -360,9 +366,9 @@ public class TeacherScreen extends javax.swing.JFrame
                         .addComponent(extraMuralsNr_Text, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(269, 269, 269))
                     .addGroup(ManageTeachers_PanelLayout.createSequentialGroup()
-                        .addGroup(ManageTeachers_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1)
-                            .addComponent(manageT_HeaderPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(ManageTeachers_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1453, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(manageT_HeaderPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ManageTeachers_PanelLayout.createSequentialGroup()
@@ -495,6 +501,14 @@ public class TeacherScreen extends javax.swing.JFrame
     {//GEN-HEADEREND:event_registerClass_FieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_registerClass_FieldActionPerformed
+
+    private void editableButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_editableButtonActionPerformed
+    {//GEN-HEADEREND:event_editableButtonActionPerformed
+        // TODO add your handling code here:
+        teacherComboBox.setEditable(!teacherComboBox.isEditable());
+        registerClass_Field.setEditable(!registerClass_Field.isEditable());
+        extraMuralsNr_Text.setEditable(!extraMuralsNr_Text.isEditable());
+    }//GEN-LAST:event_editableButtonActionPerformed
 
     /**
      * @param args the command line arguments
