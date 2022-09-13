@@ -164,6 +164,25 @@ public class TeacherScreen extends javax.swing.JFrame
         findBatter_Panel = new javax.swing.JPanel();
         findBatter_HeaderPanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        lessonInputPanel = new javax.swing.JPanel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel7 = new javax.swing.JLabel();
+        outputCalendarTabbedPane = new javax.swing.JTabbedPane();
+        tabJanuary = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblCalendar = new javax.swing.JTable();
+        tabFebruary = new javax.swing.JPanel();
+        tabMarch = new javax.swing.JPanel();
+        tabApril = new javax.swing.JPanel();
+        tabMay = new javax.swing.JPanel();
+        tabJune = new javax.swing.JPanel();
+        tabJuly = new javax.swing.JPanel();
+        tabAugust = new javax.swing.JPanel();
+        tabSeptember = new javax.swing.JPanel();
+        tabOctober = new javax.swing.JPanel();
+        tabNovember = new javax.swing.JPanel();
+        tabDecember = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -255,10 +274,11 @@ public class TeacherScreen extends javax.swing.JFrame
             manageT_HeaderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(manageT_HeaderPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
+        timetableTable.setBackground(new java.awt.Color(255, 255, 255));
         timetableTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
@@ -269,6 +289,7 @@ public class TeacherScreen extends javax.swing.JFrame
                 "Days", "lesson 1", "lesson 2", "lesson 3", "lesson 4", "lesson 5", "lesson 6", "lesson 7", "lesson 8", "lesson 9", "lesson 10", "lesson 11", "lesson 12", "lesson 13", "lesson 14"
             }
         ));
+        timetableTable.setOpaque(false);
         jScrollPane1.setViewportView(timetableTable);
 
         editableButton.setText("editable");
@@ -410,12 +431,13 @@ public class TeacherScreen extends javax.swing.JFrame
                     .addComponent(addTeacherSurnameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addTeacherNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addTeacherEMuralsSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane.addTab("Manage Teachers", ManageTeachers_Panel);
 
         findBatter_Panel.setBackground(new java.awt.Color(255, 255, 255));
+        findBatter_Panel.setForeground(new java.awt.Color(255, 255, 255));
 
         findBatter_HeaderPanel.setBackground(jTabbedPane.getBackground());
 
@@ -437,21 +459,280 @@ public class TeacherScreen extends javax.swing.JFrame
             findBatter_HeaderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(findBatter_HeaderPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
                 .addContainerGap())
         );
+
+        lessonInputPanel.setBackground(new java.awt.Color(204, 204, 204));
+
+        jSeparator1.setForeground(new java.awt.Color(25, 115, 230));
+
+        jSeparator2.setForeground(new java.awt.Color(25, 115, 230));
+
+        jLabel7.setBackground(lessonInputPanel.getBackground());
+        jLabel7.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(25, 115, 230));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Choose Lesson");
+
+        javax.swing.GroupLayout lessonInputPanelLayout = new javax.swing.GroupLayout(lessonInputPanel);
+        lessonInputPanel.setLayout(lessonInputPanelLayout);
+        lessonInputPanelLayout.setHorizontalGroup(
+            lessonInputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lessonInputPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17)
+                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        lessonInputPanelLayout.setVerticalGroup(
+            lessonInputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lessonInputPanelLayout.createSequentialGroup()
+                .addGroup(lessonInputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(lessonInputPanelLayout.createSequentialGroup()
+                        .addGap(303, 303, 303)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(lessonInputPanelLayout.createSequentialGroup()
+                        .addGap(301, 301, 301)
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(lessonInputPanelLayout.createSequentialGroup()
+                        .addGap(293, 293, 293)
+                        .addComponent(jLabel7)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        outputCalendarTabbedPane.setBackground(new java.awt.Color(255, 255, 255));
+        outputCalendarTabbedPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        outputCalendarTabbedPane.setFocusable(false);
+
+        tabJanuary.setBackground(new java.awt.Color(255, 255, 255));
+
+        tblCalendar.setBackground(new java.awt.Color(255, 255, 255));
+        tblCalendar.setForeground(new java.awt.Color(153, 153, 153));
+        tblCalendar.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][]
+            {
+                {"1", "2", "3", "4", "5", "6", "7"},
+                {"8", "9", "10", "11", "12", "13", "14"},
+                {"15", "16", "17", "18", "19", "20", "21"},
+                {"22", "23", "24", "25", "26", "27", "28"},
+                {"29", "30", null, null, null, null, null}
+            },
+            new String []
+            {
+                "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+            }
+        )
+        {
+            Class[] types = new Class []
+            {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean []
+            {
+                false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex)
+            {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex)
+            {
+                return canEdit [columnIndex];
+            }
+        });
+        tblCalendar.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        tblCalendar.setGridColor(new java.awt.Color(102, 102, 102));
+        tblCalendar.setRowHeight(110);
+        tblCalendar.setRowSelectionAllowed(false);
+        jScrollPane2.setViewportView(tblCalendar);
+
+        javax.swing.GroupLayout tabJanuaryLayout = new javax.swing.GroupLayout(tabJanuary);
+        tabJanuary.setLayout(tabJanuaryLayout);
+        tabJanuaryLayout.setHorizontalGroup(
+            tabJanuaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+        );
+        tabJanuaryLayout.setVerticalGroup(
+            tabJanuaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 629, Short.MAX_VALUE)
+        );
+
+        outputCalendarTabbedPane.addTab("Jan", tabJanuary);
+
+        javax.swing.GroupLayout tabFebruaryLayout = new javax.swing.GroupLayout(tabFebruary);
+        tabFebruary.setLayout(tabFebruaryLayout);
+        tabFebruaryLayout.setHorizontalGroup(
+            tabFebruaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        tabFebruaryLayout.setVerticalGroup(
+            tabFebruaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 629, Short.MAX_VALUE)
+        );
+
+        outputCalendarTabbedPane.addTab("Feb", tabFebruary);
+
+        javax.swing.GroupLayout tabMarchLayout = new javax.swing.GroupLayout(tabMarch);
+        tabMarch.setLayout(tabMarchLayout);
+        tabMarchLayout.setHorizontalGroup(
+            tabMarchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        tabMarchLayout.setVerticalGroup(
+            tabMarchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 629, Short.MAX_VALUE)
+        );
+
+        outputCalendarTabbedPane.addTab("Mar", tabMarch);
+
+        javax.swing.GroupLayout tabAprilLayout = new javax.swing.GroupLayout(tabApril);
+        tabApril.setLayout(tabAprilLayout);
+        tabAprilLayout.setHorizontalGroup(
+            tabAprilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        tabAprilLayout.setVerticalGroup(
+            tabAprilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 629, Short.MAX_VALUE)
+        );
+
+        outputCalendarTabbedPane.addTab("Apr", tabApril);
+
+        javax.swing.GroupLayout tabMayLayout = new javax.swing.GroupLayout(tabMay);
+        tabMay.setLayout(tabMayLayout);
+        tabMayLayout.setHorizontalGroup(
+            tabMayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        tabMayLayout.setVerticalGroup(
+            tabMayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 629, Short.MAX_VALUE)
+        );
+
+        outputCalendarTabbedPane.addTab("May", tabMay);
+
+        javax.swing.GroupLayout tabJuneLayout = new javax.swing.GroupLayout(tabJune);
+        tabJune.setLayout(tabJuneLayout);
+        tabJuneLayout.setHorizontalGroup(
+            tabJuneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        tabJuneLayout.setVerticalGroup(
+            tabJuneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 629, Short.MAX_VALUE)
+        );
+
+        outputCalendarTabbedPane.addTab("Jun", tabJune);
+
+        javax.swing.GroupLayout tabJulyLayout = new javax.swing.GroupLayout(tabJuly);
+        tabJuly.setLayout(tabJulyLayout);
+        tabJulyLayout.setHorizontalGroup(
+            tabJulyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        tabJulyLayout.setVerticalGroup(
+            tabJulyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 629, Short.MAX_VALUE)
+        );
+
+        outputCalendarTabbedPane.addTab("Jul", tabJuly);
+
+        javax.swing.GroupLayout tabAugustLayout = new javax.swing.GroupLayout(tabAugust);
+        tabAugust.setLayout(tabAugustLayout);
+        tabAugustLayout.setHorizontalGroup(
+            tabAugustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        tabAugustLayout.setVerticalGroup(
+            tabAugustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 629, Short.MAX_VALUE)
+        );
+
+        outputCalendarTabbedPane.addTab("Aug", tabAugust);
+
+        javax.swing.GroupLayout tabSeptemberLayout = new javax.swing.GroupLayout(tabSeptember);
+        tabSeptember.setLayout(tabSeptemberLayout);
+        tabSeptemberLayout.setHorizontalGroup(
+            tabSeptemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        tabSeptemberLayout.setVerticalGroup(
+            tabSeptemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 629, Short.MAX_VALUE)
+        );
+
+        outputCalendarTabbedPane.addTab("Sep", tabSeptember);
+
+        javax.swing.GroupLayout tabOctoberLayout = new javax.swing.GroupLayout(tabOctober);
+        tabOctober.setLayout(tabOctoberLayout);
+        tabOctoberLayout.setHorizontalGroup(
+            tabOctoberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        tabOctoberLayout.setVerticalGroup(
+            tabOctoberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 629, Short.MAX_VALUE)
+        );
+
+        outputCalendarTabbedPane.addTab("Oct", tabOctober);
+
+        javax.swing.GroupLayout tabNovemberLayout = new javax.swing.GroupLayout(tabNovember);
+        tabNovember.setLayout(tabNovemberLayout);
+        tabNovemberLayout.setHorizontalGroup(
+            tabNovemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        tabNovemberLayout.setVerticalGroup(
+            tabNovemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 629, Short.MAX_VALUE)
+        );
+
+        outputCalendarTabbedPane.addTab("Nov", tabNovember);
+
+        javax.swing.GroupLayout tabDecemberLayout = new javax.swing.GroupLayout(tabDecember);
+        tabDecember.setLayout(tabDecemberLayout);
+        tabDecemberLayout.setHorizontalGroup(
+            tabDecemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        tabDecemberLayout.setVerticalGroup(
+            tabDecemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 629, Short.MAX_VALUE)
+        );
+
+        outputCalendarTabbedPane.addTab("Dec", tabDecember);
 
         javax.swing.GroupLayout findBatter_PanelLayout = new javax.swing.GroupLayout(findBatter_Panel);
         findBatter_Panel.setLayout(findBatter_PanelLayout);
         findBatter_PanelLayout.setHorizontalGroup(
             findBatter_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(findBatter_PanelLayout.createSequentialGroup()
-                .addComponent(findBatter_HeaderPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+            .addComponent(findBatter_HeaderPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, findBatter_PanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lessonInputPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(outputCalendarTabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
         );
         findBatter_PanelLayout.setVerticalGroup(
             findBatter_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(findBatter_HeaderPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(findBatter_PanelLayout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(findBatter_HeaderPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(findBatter_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(findBatter_PanelLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(lessonInputPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(findBatter_PanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(outputCalendarTabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(29, 29, 29))
         );
 
         jTabbedPane.addTab("Find Batting Teacher", findBatter_Panel);
@@ -467,9 +748,8 @@ public class TeacherScreen extends javax.swing.JFrame
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(headerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jTabbedPane)
-                .addGap(0, 0, 0))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jTabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 764, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -575,12 +855,31 @@ public class TeacherScreen extends javax.swing.JFrame
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTabbedPane jTabbedPane;
     private javax.swing.JSeparator leftAddSplitter;
+    private javax.swing.JPanel lessonInputPanel;
     private javax.swing.JPanel manageT_HeaderPanel;
+    private javax.swing.JTabbedPane outputCalendarTabbedPane;
     private javax.swing.JTextField registerClass_Field;
     private javax.swing.JSeparator rightAddSplitter;
+    private javax.swing.JPanel tabApril;
+    private javax.swing.JPanel tabAugust;
+    private javax.swing.JPanel tabDecember;
+    private javax.swing.JPanel tabFebruary;
+    private javax.swing.JPanel tabJanuary;
+    private javax.swing.JPanel tabJuly;
+    private javax.swing.JPanel tabJune;
+    private javax.swing.JPanel tabMarch;
+    private javax.swing.JPanel tabMay;
+    private javax.swing.JPanel tabNovember;
+    private javax.swing.JPanel tabOctober;
+    private javax.swing.JPanel tabSeptember;
+    private javax.swing.JTable tblCalendar;
     private javax.swing.JComboBox<String> teacherComboBox;
     private javax.swing.JTable timetableTable;
     // End of variables declaration//GEN-END:variables
