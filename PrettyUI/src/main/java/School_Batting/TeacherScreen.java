@@ -4,9 +4,13 @@
  */
 package School_Batting;
 
+import com.formdev.flatlaf.ui.FlatComboBoxUI;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Toolkit;
 import javax.swing.GroupLayout;
+import javax.swing.JButton;
+import javax.swing.plaf.basic.BasicComboBoxUI;
 
 /**
  *
@@ -20,11 +24,22 @@ public class TeacherScreen extends javax.swing.JFrame
      */
     public TeacherScreen()
     {
-        setSize(Toolkit.getDefaultToolkit().getScreenSize());
+         initComponents();
+         setSize(Toolkit.getDefaultToolkit().getScreenSize());
         int screenH = Toolkit.getDefaultToolkit().getScreenSize().height;
         int screenW = Toolkit.getDefaultToolkit().getScreenSize().width;
         
-        initComponents();
+       teacherComboBox.getUI();
+       
+       teacherComboBox.setUI(new FlatComboBoxUI(){
+               @Override
+            protected JButton createArrowButton() {
+                //---style arrow button anyway you like
+                JButton result = new JButton();
+                result.setBackground(Color.orange);//---button's color
+                return result;
+            }
+       });
         /*
         headerPanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1510, 10, -1, -1));
 
