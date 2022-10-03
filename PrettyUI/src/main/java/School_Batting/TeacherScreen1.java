@@ -202,7 +202,7 @@ public class TeacherScreen1 extends javax.swing.JFrame
         });
 
         headerPanel.setBackground(new java.awt.Color(255, 255, 255));
-        headerPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        headerPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         headerPanel.setMaximumSize(new java.awt.Dimension(1042, 129));
         headerPanel.setName(""); // NOI18N
         headerPanel.setPreferredSize(new java.awt.Dimension(1600, 130));
@@ -211,6 +211,7 @@ public class TeacherScreen1 extends javax.swing.JFrame
         jButton1.setText("X");
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.setIconTextGap(0);
         jButton1.setMaximumSize(new java.awt.Dimension(20, 20));
@@ -1372,13 +1373,15 @@ public class TeacherScreen1 extends javax.swing.JFrame
         );
 
         outputCalendarTabbedPane.setBackground(new java.awt.Color(255, 255, 255));
+        outputCalendarTabbedPane.setForeground(new java.awt.Color(153, 153, 153));
         outputCalendarTabbedPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         outputCalendarTabbedPane.setFocusable(false);
+        outputCalendarTabbedPane.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         tabJanuary.setBackground(new java.awt.Color(255, 255, 255));
 
         tblCalendar.setBackground(new java.awt.Color(255, 255, 255));
-        tblCalendar.setForeground(new java.awt.Color(153, 153, 153));
+        tblCalendar.setForeground(new java.awt.Color(102, 102, 102));
         tblCalendar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
