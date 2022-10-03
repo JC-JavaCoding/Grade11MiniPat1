@@ -9,13 +9,17 @@ import com.formdev.flatlaf.ui.FlatComboBoxUI;
 import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.Component;
+import java.util.ArrayList;
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JSpinner;
 import javax.swing.JComponent;
+import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
 import javax.swing.plaf.ComboBoxUI;
 import javax.swing.plaf.ComponentUI;
 import javax.swing.plaf.basic.BasicComboBoxUI;
+import javax.swing.table.DefaultTableCellRenderer;
 
 /**
  *
@@ -31,6 +35,8 @@ public class TeacherScreen1 extends javax.swing.JFrame
     {
          initComponents();
         
+         
+         
         ComboBoxUI cui = teacherComboBox.getUI();
         
         teacherComboBox.setUI(new FlatComboBoxUI(){
@@ -180,6 +186,7 @@ public class TeacherScreen1 extends javax.swing.JFrame
         jLabel9 = new javax.swing.JLabel();
         jScrollPane29 = new javax.swing.JScrollPane();
         addTimeTableTbl = new javax.swing.JTable();
+        addTeacherButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -287,7 +294,11 @@ public class TeacherScreen1 extends javax.swing.JFrame
                 "Days", "lesson 1", "lesson 2", "lesson 3", "lesson 4", "lesson 5", "lesson 6", "lesson 7", "lesson 8", "lesson 9", "lesson 10", "lesson 11", "lesson 12", "lesson 13", "lesson 14"
             }
         ));
+        timetableTable.setCellSelectionEnabled(true);
         timetableTable.setOpaque(false);
+        timetableTable.setRowHeight(60);
+        timetableTable.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        timetableTable.setShowGrid(true);
         jScrollPane1.setViewportView(timetableTable);
 
         editableButton.setText("editable");
@@ -2243,13 +2254,33 @@ public class TeacherScreen1 extends javax.swing.JFrame
             }
         });
         addTimeTableTbl.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_NEXT_COLUMN);
+        addTimeTableTbl.setCellSelectionEnabled(true);
         addTimeTableTbl.setOpaque(false);
         addTimeTableTbl.setRowHeight(40);
-        addTimeTableTbl.setRowSelectionAllowed(false);
-        addTimeTableTbl.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        addTimeTableTbl.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        addTimeTableTbl.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         addTimeTableTbl.setShowGrid(true);
+        addTimeTableTbl.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                addTimeTableTblMouseClicked(evt);
+            }
+        });
         jScrollPane29.setViewportView(addTimeTableTbl);
         addTimeTableTbl.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+
+        addTeacherButton.setBackground(chooseTeacherButton.getBackground());
+        addTeacherButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        addTeacherButton.setForeground(new java.awt.Color(51, 255, 255));
+        addTeacherButton.setText("Add Teacher");
+        addTeacherButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                addTeacherButtonMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout addTeacherPaneLayout = new javax.swing.GroupLayout(addTeacherPane);
         addTeacherPane.setLayout(addTeacherPaneLayout);
@@ -2270,12 +2301,18 @@ public class TeacherScreen1 extends javax.swing.JFrame
                 .addContainerGap()
                 .addComponent(jScrollPane29)
                 .addContainerGap())
+            .addGroup(addTeacherPaneLayout.createSequentialGroup()
+                .addGap(631, 631, 631)
+                .addComponent(addTeacherButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         addTeacherPaneLayout.setVerticalGroup(
             addTeacherPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addTeacherPaneLayout.createSequentialGroup()
                 .addComponent(addTeacherHeaderPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(addTeacherButton)
+                .addGap(18, 18, 18)
                 .addGroup(addTeacherPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(addTeacherNameField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(addTeacherPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -2348,6 +2385,52 @@ public class TeacherScreen1 extends javax.swing.JFrame
         // TODO add your handling code here:
     }//GEN-LAST:event_registerClass_Field1ActionPerformed
 
+    private void addTimeTableTblMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_addTimeTableTblMouseClicked
+    {//GEN-HEADEREND:event_addTimeTableTblMouseClicked
+        // TODO add your handling code here:
+//        addTimeTableTbl.setSelectionMode(1);
+//        int collumn = addTimeTableTbl.getSelectedColumn();
+//        int row = addTimeTableTbl.getSelectedRow();
+//        addTimeTableTbl.changeSelection(row, collumn, false, false);
+        Cell selectedC = new Cell( addTimeTableTbl.getSelectedRow(), addTimeTableTbl.getSelectedColumn());
+        if(!selectedCells.contains(selectedC))
+        {
+            selectedCells.add(selectedC);        
+            for (Cell c: selectedCells)
+            {
+                addTimeTableTbl
+                        .getColumn("L1")//addTimeTableTbl.getColumnName(c.getColumn()))
+                        .setCellRenderer(
+                                new DefaultTableCellRenderer()
+                                {
+                                    Color origin = null;
+                                    
+                                    @Override
+                                    public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column)
+                                    {
+                                        DefaultTableCellRenderer renderer = (DefaultTableCellRenderer) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+                                        if (origin==null) origin = getForeground();
+                                        else if   (value==null) renderer.setText(""); 
+                                        else renderer.setText(value.toString()); 
+                                        
+                                        if (row == 3) renderer.setForeground(Color.blue);
+                                        else renderer.setForeground(origin);
+                                        
+                                        return renderer;
+                                    }
+                                    
+                                }
+                );
+            }
+        }
+    }//GEN-LAST:event_addTimeTableTblMouseClicked
+
+    private void addTeacherButtonMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_addTeacherButtonMouseClicked
+    {//GEN-HEADEREND:event_addTeacherButtonMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_addTeacherButtonMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -2394,9 +2477,10 @@ public class TeacherScreen1 extends javax.swing.JFrame
             }
         });
     }
-
+private ArrayList<Cell> selectedCells = new ArrayList<>();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ManageTeachers_Panel;
+    private javax.swing.JButton addTeacherButton;
     private javax.swing.JSpinner addTeacherEMuralsSpinner1;
     private javax.swing.JPanel addTeacherHeaderPanel;
     private javax.swing.JTextField addTeacherNameField1;
